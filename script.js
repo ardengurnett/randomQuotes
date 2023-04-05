@@ -54,6 +54,8 @@ let generateQuote = () => {
             console.log('invalid');
             break;
     }
+
+    console.log('This is my final quote');
 }
 
 
