@@ -59,3 +59,4 @@ let generateQuote = () => {
 
 
 generateQuote();
+generateQuote();
