@@ -10,7 +10,7 @@ let randomQuotes = {
 
 //function that generates random genre, a random property from the randomQuotes object
 let randGenre = () => {
-    let genreIndex = Math.floor(Math.random() * (((Object.keys(randomQuotes)).length) - 1));//random number between 0 and 2
+    let genreIndex = Math.floor(Math.random() * (((Object.keys(randomQuotes)).length)));//random number between 0 and 2
     let randomQuotesKeys = Object.keys(randomQuotes);//array that has keys as items
     let genre = randomQuotesKeys[genreIndex];//chooses single item from array
     return genre;
@@ -22,13 +22,13 @@ let genreIndex = (genre) => {
     genre = randGenre();
     switch (genre) {
         case 'motivational':
-            return Math.floor(Math.random() * 4);
+            return Math.floor(Math.random() * 3);
             break;
         case 'sad':
-            return Math.floor(Math.random() * 6);
+            return Math.floor(Math.random() * 5);
             break;
         case 'silly':
-            return Math.floor(Math.random() * 5);
+            return Math.floor(Math.random() * 4);
             break;
         default:
             return console.log('invalid');
@@ -41,6 +41,8 @@ let genreIndex = (genre) => {
 //generates random quote using randGenre and genreIndex functions
 let generateQuote = () => {
     let genre = randGenre();
+
+    console.log(`Here is a ${genre} quote: `)
     switch (genre) {
         case 'motivational':
             console.log(randomQuotes.motivational[genreIndex()]);
@@ -50,6 +52,7 @@ let generateQuote = () => {
             break;
         case 'silly':
             console.log(randomQuotes.silly[genreIndex()]);
+            break;
         default:
             console.log('invalid');
             break;
@@ -58,5 +61,4 @@ let generateQuote = () => {
 
 
 
-generateQuote();
 generateQuote();
